@@ -14,22 +14,14 @@ return new class extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->foreignId('category_id')->constrained()->onDelete('cascade');
+            $table->foreignId('brand_id')->constrained();
+            $table->string('sku')->unique();
+            $table->string('barcode')->nullable();
             $table->string('name');
             $table->text('description');
             $table->decimal('price', 10, 2);
             $table->integer('stock')->default(0);
             $table->string('image')->nullable();
-            $table->foreignId('brand_id')->constrained();
-            $table->string('sku')->unique();
-            $table->string('barcode')->nullable();
-            $table->string('model')->nullable();
-            $table->string('voltage')->nullable();
-            $table->integer('warranty')->nullable();
-            $table->decimal('weight', 8, 2)->nullable();
-            $table->json('dimensions')->nullable();
-            $table->boolean('active')->default(true);
-            $table->boolean('featured')->default(false);
-            $table->boolean('promotional')->default(false);
             $table->timestamps();
         });
     }

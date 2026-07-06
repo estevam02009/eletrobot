@@ -9,21 +9,10 @@ class Product extends Model
 {
     protected $fillable = [
         'category_id',
-        'brand_id',
-        'sku',
-        'barcode',
-        'model',
         'name',
         'description',
         'price',
         'stock',
-        'voltage',
-        'warranty',
-        'weight',
-        'dimensions',
-        'featured',
-        'promotion',
-        'active',
         'image'
     ];
 
