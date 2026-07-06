@@ -14,10 +14,6 @@ class CategoryResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        return [
-            'id' => $this->id,
-            'nome' => $this->name,
-            'criado_em' => $this->created_at?->format('d/m/Y H:i'),
-        ];
+        return parent::toArray($request);
     }
 }
