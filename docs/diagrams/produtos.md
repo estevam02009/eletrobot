@@ -1,0 +1,23 @@
+# Consulta de Produtos
+
+```mermaid
+flowchart TD
+
+Cliente
+
+Cliente --> ChatBot
+
+ChatBot --> ProductService
+
+ProductService --> ProductRepository
+
+ProductRepository --> Banco[(MySQL)]
+
+Banco --> ProductRepository
+
+ProductRepository --> ProductService
+
+ProductService --> ChatBot
+
+ChatBot --> Cliente
+```
